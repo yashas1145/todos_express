@@ -1,0 +1,114 @@
+html {
+    height: 100%;
+    margin: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.gradient {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 200% 200%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+h1 {
+    height: 5rem;
+    width: 25rem;
+    border: 1px solid black;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 2px gray;
+    text-align: center;
+    background-color: whitesmoke;
+}
+
+table {
+    margin: 1rem;
+}
+
+td {
+    padding: 0.5rem;
+}
+
+input[type="text"] {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border: none;
+    background-color: whitesmoke;
+    border-bottom: 1px solid black;
+}
+
+button {
+    text-align: center;
+    margin-left: 1rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    background-color: whitesmoke;
+    border: none;
+    border-radius: 100%;
+    transition: 0.5s ease;
+}
+
+button.update-btn:hover {
+    background-color: rgb(114, 178, 212);
+}
+
+button.submit-btn:hover {
+    background-color: rgb(83, 183, 96);
+}
+
+.flex-container {
+    margin: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-start {
+    justify-content: flex-start;
+}
+
+.todos {
+    height: 25rem;
+    width: 25rem;
+    border: 1px solid black;
+    border-radius: 1rem;
+    justify-content: flex-start;
+    box-shadow: 2px 2px 2px gray;
+    background-color: whitesmoke;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.round-checkbox {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: white;
+    border-radius: 100%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    appearance: none;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.round-checkbox:hover {
+    background-color: rgb(76, 188, 92);
+}

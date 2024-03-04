@@ -1,10 +1,19 @@
 import express from "express";
 import methodOverride from "method-override";
 import pg from "pg";
+import env from "dotenv";
+
+env.config();
 
 const port = 3000;
 const app = express();
-const db = new pg.Client({user: "postgres", host: "localhost", database: "world", password: "kjm40329", port: 5432});
+const db = new pg.Client({
+    user: process.env.PG_USER, 
+    host: process.env.PG_HOST, 
+    database: process.env.PG_DATABASE, 
+    password: process.env.PG_PASSWORD, 
+    port: process.env.PG_PORT
+});
 
 app.use(express.static("public"));
 app.use(express.urlencoded({extended: true}));

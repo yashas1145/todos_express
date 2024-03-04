@@ -93,8 +93,15 @@ button.submit-btn:hover {
     justify-content: flex-start;
     box-shadow: 2px 2px 2px gray;
     background-color: whitesmoke;
+}
+
+.overflow-div {
     overflow-x: hidden;
     overflow-y: auto;
+}
+
+.add-todo-form {
+    margin: 1rem;
 }
 
 .round-checkbox {

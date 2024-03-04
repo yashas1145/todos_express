@@ -8,11 +8,11 @@ env.config();
 const port = 3000;
 const app = express();
 const db = new pg.Client({
-    user: process.env.PG_USER, 
-    host: process.env.PG_HOST, 
-    database: process.env.PG_DATABASE, 
-    password: process.env.PG_PASSWORD, 
-    port: process.env.PG_PORT
+    user: process.env.PG_USER_LOCAL, 
+    host: process.env.PG_HOST_LOCAL, 
+    database: process.env.PG_DATABASE_LOCAL, 
+    password: process.env.PG_PASSWORD_LOCAL, 
+    port: process.env.PG_PORT_LOCAL
 });
 
 app.use(express.static("public"));

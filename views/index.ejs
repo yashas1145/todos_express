@@ -11,28 +11,30 @@
             <h1 class="flex-container">Todos ✅</h1>
 
             <div class="todos flex-container flex-col">
-                <table>
-                    <% for (let i in todos) { %>
-                        <tr>
-                            <td>
-                                <div class="flex-container flex-start">
-                                    <form action="/todo/<%= todos[i].todo_id %>" method="post">
-                                        <input type="hidden" name="_method" value="DELETE">
-                                        <input type="checkbox" class="round-checkbox" onchange="this.form.submit()">
-                                        <span id="title<%= todos[i].todo_id %>"><%= todos[i].todo_description %></span>
-                                    </form>
-                                    <form action="/todo/<%= todos[i].todo_id %>" method="post">
-                                        <input type="hidden" name="_method" value="PUT">
-                                        <input id="text<%= todos[i].todo_id %>" type="text" name="update_todo" id="update_todo" value="<%= todos[i].todo_description %>" hidden>
-                                        <button class="submit-btn" id="save<%= todos[i].todo_id %>" type="submit" hidden>✓</button>
-                                    </form>
-                                    <button class="update-btn" id="update<%= todos[i].todo_id %>" onclick="handleUpdate('<%= todos[i].todo_id %>')">✎</button>
-                                </div>
-                            </td>
-                        </tr>
-                    <% } %>
-                </table>
-                <form action="/todo" method="post">
+                <div class="overflow-div">
+                    <table>
+                        <% for (let i in todos) { %>
+                            <tr>
+                                <td>
+                                    <div class="flex-container flex-start">
+                                        <form action="/todo/<%= todos[i].todo_id %>" method="post">
+                                            <input type="hidden" name="_method" value="DELETE">
+                                            <input type="checkbox" class="round-checkbox" onchange="this.form.submit()">
+                                            <span id="title<%= todos[i].todo_id %>"><%= todos[i].todo_description %></span>
+                                        </form>
+                                        <form action="/todo/<%= todos[i].todo_id %>" method="post">
+                                            <input type="hidden" name="_method" value="PUT">
+                                            <input id="text<%= todos[i].todo_id %>" type="text" name="update_todo" id="update_todo" value="<%= todos[i].todo_description %>" hidden>
+                                            <button class="submit-btn" id="save<%= todos[i].todo_id %>" type="submit" hidden>✓</button>
+                                        </form>
+                                        <button class="update-btn" id="update<%= todos[i].todo_id %>" onclick="handleUpdate('<%= todos[i].todo_id %>')">✎</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        <% } %>
+                    </table>
+                </div>
+                <form action="/todo" method="post" class="add-todo-form">
                     <input type="text" name="todo_description" id="todo_description" placeholder="Add a todo...">
                     <button class="submit-btn" type="submit">+</button>
                 </form>

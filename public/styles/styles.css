@@ -58,14 +58,6 @@ button {
     transition: 0.5s ease;
 }
 
-button.update-btn:hover {
-    background-color: rgb(114, 178, 212);
-}
-
-button.submit-btn:hover {
-    background-color: rgb(83, 183, 96);
-}
-
 .flex-container {
     margin: 0.5rem;
     display: flex;

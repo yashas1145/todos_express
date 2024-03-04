@@ -18,7 +18,10 @@
                                 <td>
                                     <form action="/todo/<%= todos[i].todo_id %>" method="post">
                                         <input type="hidden" name="_method" value="DELETE">
-                                        <input type="checkbox" class="round-checkbox" onchange="this.form.submit()">
+                                        <button type="submit" style="cursor: pointer;">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" clip-rule="evenodd" d="M19.77 4.93001L21.17 6.33001L8.43 19.07L2.83 13.47L4.23 12.07L8.43 16.27L19.77 4.93001ZM19.77 2.10001L8.43 13.44L4.23 9.24001L0 13.47L8.43 21.9L24 6.33001L19.77 2.10001Z" fill="#F68217"></path> </svg>
+                                        </button>
+                                        <!-- <input type="checkbox" class="round-checkbox" onchange="this.form.submit()"> -->
                                     </form>
                                 </td>
                                 <td>
@@ -27,9 +30,17 @@
                                         <form action="/todo/<%= todos[i].todo_id %>" method="post">
                                             <input type="hidden" name="_method" value="PUT">
                                             <input id="text<%= todos[i].todo_id %>" type="text" name="update_todo" id="update_todo" value="<%= todos[i].todo_description %>" hidden>
-                                            <button class="submit-btn" id="save<%= todos[i].todo_id %>" type="submit" hidden>✓</button>
+                                            <button class="submit-btn" id="save<%= todos[i].todo_id %>" type="submit" hidden>
+                                                <span style="cursor: pointer;">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="24px" height="24px" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 4335 4335" xmlns:xlink="http://www.w3.org/1999/xlink"> <defs> <style type="text/css"> .fil1 {fill:#00CCFF} .fil0 {fill:#1B74B9} .fil2 {fill:white} </style> </defs> <g id="Layer_x0020_1"> <metadata id="CorelCorpID_0Corel-Layer"></metadata> <path class="fil0" d="M1859 3104c-14,0 -31,-7 -42,-17l-761 -757c-110,-110 -111,-289 0,-395 106,-109 289,-109 398,-4l402 399 1018 -1015c176,-176 479,-50 479,197 0,78 -28,148 -81,205l-1360 1352c-14,20 -24,35 -53,35zm-887 -2610c-58,0 -84,-77 -36,-109 85,-55 167,-111 257,-151 75,-34 122,74 53,109 -78,39 -176,83 -243,141 -7,7 -17,10 -31,10zm-705 832c-42,0 -74,-49 -56,-88 34,-78 98,-194 144,-261 45,-66 143,6 99,70 -33,48 -121,191 -138,243 -3,21 -28,36 -49,36zm-201 1067c-31,0 -60,-25 -60,-56 -3,-101 -8,-200 -3,-300 4,-78 127,-78 123,18 -4,90 -4,186 4,275 3,35 -21,63 -57,66 -3,-3 -7,-3 -7,-3zm363 1029c-59,0 -105,-114 -141,-173 -29,-48 -113,-161 -35,-197 70,-34 96,63 137,134 32,52 57,98 85,137 26,39 -9,99 -46,99zm828 708c-45,0 -233,-120 -285,-152 -66,-40 -4,-145 66,-102 81,50 162,100 244,137 59,27 40,117 -25,117zm905 204c-57,0 -195,18 -187,-71 8,-78 94,-52 191,-52 56,0 109,0 158,-4 80,-7 91,117 11,123 -57,4 -116,4 -173,4zm941 -222c-64,0 -85,-89 -28,-116 86,-41 169,-89 243,-141 66,-47 133,57 70,98 -38,25 -245,159 -285,159zm817 -722c-45,0 -78,-56 -49,-95l67 -109c51,-84 77,-203 155,-166 31,14 42,53 28,81 -39,77 -92,183 -145,257 -17,21 -35,32 -56,32zm345 -1032c-37,0 -63,-32 -60,-67 8,-87 8,-196 0,-282 -7,-80 115,-91 124,-11 8,72 14,231 3,303 -7,32 -35,57 -67,57zm-218 -1068c-59,0 -72,-77 -131,-172 -21,-35 -42,-71 -67,-102 -49,-65 57,-135 99,-71 55,83 111,168 152,257 18,40 -12,88 -53,88zm-722 -817c-43,0 -98,-64 -138,-74 0,0 -3,0 -3,-3 -50,-29 -99,-57 -141,-78 -73,-34 -17,-140 56,-106 77,37 183,101 261,148 55,34 21,113 -35,113zm-1325 -342c-77,0 -79,-115 -3,-123 98,-10 204,-7 299,-3 81,5 69,130 -11,123 -91,-7 -190,-7 -281,3 0,0 0,0 -4,0zm162 3865c-1007,0 -1825,-821 -1825,-1829 0,-1007 821,-1828 1829,-1828 1007,0 1828,821 1828,1828 -4,1008 -824,1829 -1832,1829zm0 -3530c-940,0 -1705,764 -1705,1705 0,941 765,1705 1705,1705 941,0 1705,-764 1705,-1705 0,-944 -764,-1705 -1705,-1705zm-905 1508c-140,0 -212,168 -113,267l712 712 1328 -1324c60,-61 60,-166 0,-226 -64,-63 -162,-63 -226,0l-1060 1057c-32,31 -75,17 -102,-11l-426 -429c-32,-32 -74,-46 -113,-46z"></path> <path class="fil1" d="M1856 2330l1018 -1015c176,-176 479,-50 479,197 0,78 -28,148 -81,205l-1360 1352c-14,20 -24,35 -53,35 -14,0 -31,-7 -42,-17l-761 -757c-110,-110 -111,-289 0,-395 106,-109 289,-109 398,-4l402 399zm306 -1864c-940,0 -1705,764 -1705,1705 0,941 765,1705 1705,1705 941,0 1705,-764 1705,-1705 0,-944 -764,-1705 -1705,-1705z"></path> <path class="fil2" d="M2958 1403l-1060 1057c-32,31 -75,17 -102,-11l-426 -429c-32,-32 -74,-46 -113,-46 -140,0 -212,168 -113,267l712 712 1328 -1324c60,-61 60,-166 0,-226 -64,-63 -162,-63 -226,0z"></path> </g> </svg>
+                                                </span>
+                                            </button>
                                         </form>
-                                        <button class="update-btn" id="update<%= todos[i].todo_id %>" onclick="handleUpdate('<%= todos[i].todo_id %>')">✎</button>
+                                        <button id="update<%= todos[i].todo_id %>" onclick="handleUpdate('<%= todos[i].todo_id %>')">
+                                            <span style="cursor: pointer;">
+                                                <svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" height="24" width="24" version="1.1"><g transform="translate(0 -1028.4)"><g transform="matrix(1.0607 1.0607 -1.0607 1.0607 1146.8 34.926)"><path d="m-63 1003.4v11.3 0.7 1l2 2 2-2v-1-0.7-11.3h-4z" fill="#ecf0f1"/><path d="m-61 1003.4v15l2-2v-1-0.7-11.3h-2z" fill="#bdc3c7"/><rect height="11" width="4" y="1004.4" x="-63" fill="#e67e22"/><path d="m-61 1000.4c-1.105 0-2 0.9-2 2v1h4v-1c0-1.1-0.895-2-2-2z" fill="#7f8c8d"/><g transform="translate(-7,1)"><path d="m-55.406 1016 1.406 1.4 1.406-1.4h-1.406-1.406z" fill="#34495e"/><path d="m-54 1016v1.4l1.406-1.4h-1.406z" fill="#2c3e50"/></g><path d="m-61 1000.4c-1.105 0-2 0.9-2 2v1h2v-3z" fill="#95a5a6"/><rect height="11" width="2" y="1004.4" x="-61" fill="#d35400"/></g></g></svg>
+                                            </span>
+                                        </button>
                                     </div>
                                 </td>
                             </tr>
@@ -37,8 +48,10 @@
                     </table>
                 </div>
                 <form action="/todo" method="post" class="add-todo-form">
-                    <input type="text" name="todo_description" id="todo_description" placeholder="Add a todo...">
-                    <button class="submit-btn" type="submit">+</button>
+                    <input type="text" name="todo_description" id="todo_description" placeholder="Add a todo..." required>
+                    <button class="submit-btn" type="submit">
+                        <svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="24" width="24" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"> <g transform="translate(0 -1028.4)"> <path d="m22 12c0 5.523-4.477 10-10 10-5.5228 0-10-4.477-10-10 0-5.5228 4.4772-10 10-10 5.523 0 10 4.4772 10 10z" transform="translate(0 1029.4)" fill="#27ae60"></path> <path d="m22 12c0 5.523-4.477 10-10 10-5.5228 0-10-4.477-10-10 0-5.5228 4.4772-10 10-10 5.523 0 10 4.4772 10 10z" transform="translate(0 1028.4)" fill="#2ecc71"></path> <path d="m6.0001 1042.4h4.9999v5h2v-5h5v-2h-5v-5h-2v5h-4.9999v2z" fill="#27ae60"></path> <path d="m6 1041.4h5v5h2v-5h5v-2h-5v-5h-2v5h-5v2z" fill="#ecf0f1"></path> </g> </svg>
+                    </button>
                 </form>
             </div>
         </div>

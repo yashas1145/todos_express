@@ -54,8 +54,8 @@ app.put("/todo/:todo_id", (req, res) => {
     }
 });
 
-app.delete("/todo/:todo_id", (req, res) => {
-    const isDeleted = deleteTodo(req.params.todo_id);
+app.delete("/todo/:todo_id", async (req, res) => {
+    const isDeleted = await deleteTodo(req.params.todo_id);
     if (isDeleted) {
         res.redirect("/");
     } else {

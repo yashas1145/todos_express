@@ -7,13 +7,17 @@ env.config();
 
 const port = 3000;
 const app = express();
-const db = new pg.Client({
-    user: process.env.PG_USER_LOCAL, 
-    host: process.env.PG_HOST_LOCAL, 
-    database: process.env.PG_DATABASE_LOCAL, 
-    password: process.env.PG_PASSWORD_LOCAL, 
-    port: process.env.PG_PORT_LOCAL
+const { Pool } = pg;
+const db = new Pool({
+    connectionString: process.env.POSTGRES_URL
 });
+// const db = new pg.Client({
+//     user: process.env.PG_USER_LOCAL, 
+//     host: process.env.PG_HOST_LOCAL, 
+//     database: process.env.PG_DATABASE_LOCAL, 
+//     password: process.env.PG_PASSWORD_LOCAL, 
+//     port: process.env.PG_PORT_LOCAL
+// });
 
 app.use(express.static("public"));
 app.use(express.urlencoded({extended: true}));
@@ -35,9 +39,9 @@ app.get("/", async (req, res) => {
     res.render("index.ejs", data);
 });
 
-app.post("/todo", (req, res) => {
+app.post("/todo", async (req, res) => {
     const todo_desc = req.body.todo_description;
-    const isAdded = addTodo(todo_desc);
+    const isAdded = await addTodo(todo_desc);
     if (isAdded) {
         res.redirect("/");
     } else {

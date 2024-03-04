@@ -16,12 +16,14 @@
                         <% for (let i in todos) { %>
                             <tr>
                                 <td>
+                                    <form action="/todo/<%= todos[i].todo_id %>" method="post">
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <input type="checkbox" class="round-checkbox" onchange="this.form.submit()">
+                                    </form>
+                                </td>
+                                <td>
                                     <div class="flex-container flex-start">
-                                        <form action="/todo/<%= todos[i].todo_id %>" method="post">
-                                            <input type="hidden" name="_method" value="DELETE">
-                                            <input type="checkbox" class="round-checkbox" onchange="this.form.submit()">
-                                            <span id="title<%= todos[i].todo_id %>"><%= todos[i].todo_description %></span>
-                                        </form>
+                                        <span id="title<%= todos[i].todo_id %>"><%= todos[i].todo_description %></span>
                                         <form action="/todo/<%= todos[i].todo_id %>" method="post">
                                             <input type="hidden" name="_method" value="PUT">
                                             <input id="text<%= todos[i].todo_id %>" type="text" name="update_todo" id="update_todo" value="<%= todos[i].todo_description %>" hidden>

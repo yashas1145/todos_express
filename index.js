@@ -42,11 +42,11 @@ app.post("/todo", async (req, res) => {
     }
 });
 
-app.put("/todo/:todo_id", (req, res) => {
+app.put("/todo/:todo_id", async (req, res) => {
     const todoId = req.params.todo_id;
     const todo_desc = req.body.update_todo;
     const todo = [todoId, todo_desc];
-    const isUpdated = updateTodo(todo);
+    const isUpdated = await updateTodo(todo);
     if (isUpdated) {
         res.redirect("/");
     } else {
